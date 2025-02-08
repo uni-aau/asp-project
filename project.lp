@@ -7,8 +7,8 @@ cell(5,1,"e"). cell(5,2,"b"). cell(5,3,"a"). cell(5,4,"a"). cell(5,5,"a").
 % For detailed step by step explanation, see pdf
 
 % Dimensions of grid
-row(1..R) :- R = #max { Row : cell(Row, _, _) }.
-col(1..C) :- C = #max { Col : cell(_, Col, _) }.
+row(Row) :- cell(Row, _, _).
+col(Col) :- cell(_, Col, _).
 
 % Generating the candidates for crossing out
 { crossedout(Row, Col, Symbol) } :- cell(Row, Col, Symbol).
